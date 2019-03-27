@@ -1,4 +1,4 @@
-# TimePicker
+# Date Time Picker
 - The simple and powerful time picker for Android.
 
 <img src="https://user-images.githubusercontent.com/22026902/55102879-7b723980-50ef-11e9-9aa9-41c169ce70e8.gif" width="200" height="360" />
