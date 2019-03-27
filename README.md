@@ -1,7 +1,7 @@
 # TimePicker
 - The simple and powerful time picker for Android.
 
-<img src="https://user-images.githubusercontent.com/22026902/55075130-3ed81b00-50ba-11e9-8cf7-13f4f608d27e.jpg" width="200" height="360" />
+<img src="https://user-images.githubusercontent.com/22026902/55102879-7b723980-50ef-11e9-9aa9-41c169ce70e8.gif" width="200" height="360" />
 
 **Features:**
 - Set to default current time.
