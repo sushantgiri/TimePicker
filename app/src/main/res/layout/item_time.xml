@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.sushant.timepicker.percentHelper.PercentRelativeLayout android:id="@+id/itemRootLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_heightPercent="20%w"
+    app:layout_widthPercent="20%w"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/item_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:fontFamily="@font/nunito_light"
+        android:textColor="@color/unselected_color"
+        />
+
+
+</com.sushant.timepicker.percentHelper.PercentRelativeLayout>

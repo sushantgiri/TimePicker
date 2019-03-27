@@ -1,0 +1,170 @@
+<com.sushant.timepicker.percentHelper.PercentRelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@mipmap/background"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/parentTimeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+
+            <com.sushant.timepicker.percentHelper.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/selectDateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/nunito_regular"
+                    android:lineSpacingExtra="1.2dp"
+                    android:text="SELECT DATE"
+                    android:textColor="@color/white"
+                    android:textColorLink="@color/white"
+                    app:layout_marginBottomPercent="5%w"
+                    app:layout_marginTopPercent="18.3%w"
+                    app:layout_textSizePercent="5%w" />
+
+                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                    android:id="@+id/day"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/selectDateText"
+                    android:background="@color/picker_color"
+                    app:layout_marginBottomPercent="0.3%w"
+                    app:layout_heightPercent="20%w"
+                    />
+
+                <View
+                    android:layout_below="@+id/selectDateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_widthPercent="20%w"
+                    app:layout_heightPercent="1%w"
+                    app:layout_marginTopPercent="19%w"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"/>
+
+
+                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                    android:id="@+id/month"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_heightPercent="20%w"
+                    android:background="@color/picker_color"
+                    android:layout_below="@+id/day"/>
+
+
+                <View
+                    android:layout_below="@+id/day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_widthPercent="20%w"
+                    app:layout_heightPercent="1%w"
+                    app:layout_marginTopPercent="19%w"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"/>
+
+
+
+
+                <TextView
+                    android:id="@+id/selectTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/nunito_regular"
+                    android:layout_below="@+id/month"
+                    android:lineSpacingExtra="1.2dp"
+                    android:text="SELECT TIME"
+                    android:textColor="@color/white"
+                    android:textColorLink="@color/white"
+                    app:layout_marginBottomPercent="5%w"
+                    app:layout_marginTopPercent="12.9%w"
+                    app:layout_textSizePercent="5%w" />
+
+
+                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                    android:id="@+id/hours"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/selectTimeText"
+                    android:background="@color/picker_color"
+                    app:layout_marginBottomPercent="0.3%w"
+                    app:layout_heightPercent="20%w"/>
+
+                <View
+                    android:layout_below="@+id/selectTimeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_widthPercent="20%w"
+                    app:layout_heightPercent="1%w"
+                    app:layout_marginTopPercent="19%w"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"/>
+
+                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                    android:id="@+id/minutes"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_heightPercent="20%w"
+                    android:layout_below="@+id/hours"
+                    android:background="@color/picker_color"
+                    app:layout_marginBottomPercent="12.9%w"
+                    />
+
+                <View
+                    android:layout_below="@+id/hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_widthPercent="20%w"
+                    app:layout_heightPercent="1%w"
+                    app:layout_marginTopPercent="19%w"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white"/>
+
+
+
+
+                <com.sushant.timepicker.ScaleButton
+                    android:id="@+id/confirmButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/rounded_corners_button"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="Confirm"
+                    android:textColor="@color/white"
+                    android:stateListAnimator="@null"
+                    app:layout_marginTopPercent="19.9%w"
+                    app:layout_marginBottomPercent="10%w"
+                    app:layout_marginLeftPercent="9.8%w"
+                    app:layout_marginRightPercent="10%w"
+                    tools:ignore="UnusedAttribute" />
+
+
+
+
+
+            </com.sushant.timepicker.percentHelper.PercentRelativeLayout>
+        </ScrollView>
+
+
+
+    </RelativeLayout>
+</com.sushant.timepicker.percentHelper.PercentRelativeLayout>
