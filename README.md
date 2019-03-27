@@ -3,7 +3,7 @@
 
 <img src="https://user-images.githubusercontent.com/22026902/55075130-3ed81b00-50ba-11e9-8cf7-13f4f608d27e.jpg" width="200" height="360" />
 
-Features:
+""Features"":
 - Set to default current time.
 - Set default value on start Up.
 - Completely customizable views.
