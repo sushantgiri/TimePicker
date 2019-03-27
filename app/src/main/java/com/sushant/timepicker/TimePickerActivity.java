@@ -7,16 +7,22 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.sushant.timepicker.library.DateTimeFragment;
+
 public class TimePickerActivity extends AppCompatActivity implements DateTimeFragment.TimePickerListener {
 
-DateTimeFragment dateTimeFragment;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideSystemUI();
         setContentView(R.layout.activity_main);
 
-        dateTimeFragment = DateTimeFragment.newInstance();
+
+        DateTimeFragment dateTimeFragment = DateTimeFragment.newInstance();
+
+        dateTimeFragment.setTimeHeaderText("Select Time !!!");
+        dateTimeFragment.setDateHeaderText("Select Date !!!");
+
 
 
         getSupportFragmentManager()
@@ -24,6 +30,7 @@ DateTimeFragment dateTimeFragment;
                 .add(R.id.dateContainer, DateTimeFragment.newInstance(), DateTimeFragment.class.getName())
                 .disallowAddToBackStack()
                 .commit();
+
 
     }
 

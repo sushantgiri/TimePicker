@@ -1,20 +1,20 @@
-package com.sushant.timepicker.percentHelper;
+package com.sushant.timepicker.library.percentHelper;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 /**
- * Subclass of {@link FrameLayout} that supports percentage based dimensions and
+ * Subclass of {@link RelativeLayout} that supports percentage based dimensions and
  * margins.
  *
  * You can specify dimension or a margin of child by using attributes with "Percent" suffix. Follow
  * this example:
  *
  * <pre class="prettyprint">
- * &lt;android.support.percent.PercentFrameLayout
+ * &lt;android.support.percent.PercentRelativeLayout
  *         xmlns:android="http://schemas.android.com/apk/res/android"
  *         xmlns:app="http://schemas.android.com/apk/res-auto"
  *         android:layout_width="match_parent"
@@ -46,19 +46,19 @@ import android.widget.FrameLayout;
  * if the percentage size is too small for the View's content, it will be resized using
  * {@code wrap_content} rule.
  */
-public class PercentFrameLayout extends FrameLayout {
+public class PercentRelativeLayout extends RelativeLayout {
     private final PercentLayoutHelper mHelper = new PercentLayoutHelper(this);
 
-    public PercentFrameLayout(Context context) {
+    public PercentRelativeLayout(Context context) {
         super(context);
     }
 
-    public PercentFrameLayout(Context context, AttributeSet attrs) {
+    public PercentRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public PercentFrameLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
+    public PercentRelativeLayout(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
     }
 
     @Override
@@ -81,7 +81,7 @@ public class PercentFrameLayout extends FrameLayout {
         mHelper.restoreOriginalParams();
     }
 
-    public static class LayoutParams extends FrameLayout.LayoutParams
+    public static class LayoutParams extends RelativeLayout.LayoutParams
             implements PercentLayoutHelper.PercentLayoutParams {
         private PercentLayoutHelper.PercentLayoutInfo mPercentLayoutInfo;
 
@@ -94,26 +94,12 @@ public class PercentFrameLayout extends FrameLayout {
             super(width, height);
         }
 
-        public LayoutParams(int width, int height, int gravity) {
-            super(width, height, gravity);
-        }
-
         public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
         }
 
         public LayoutParams(MarginLayoutParams source) {
             super(source);
-        }
-
-        public LayoutParams(FrameLayout.LayoutParams source) {
-            super((MarginLayoutParams) source);
-            gravity = source.gravity;
-        }
-
-        public LayoutParams(LayoutParams source) {
-            this((FrameLayout.LayoutParams) source);
-            mPercentLayoutInfo = source.mPercentLayoutInfo;
         }
 
         @Override

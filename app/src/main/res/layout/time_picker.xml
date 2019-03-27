@@ -1,4 +1,4 @@
-<com.sushant.timepicker.percentHelper.PercentRelativeLayout android:layout_width="match_parent"
+<com.sushant.timepicker.library.percentHelper.PercentRelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/rootView"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,7 +20,7 @@
             android:scrollbars="none">
 
 
-            <com.sushant.timepicker.percentHelper.PercentRelativeLayout
+            <com.sushant.timepicker.library.percentHelper.PercentRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -40,7 +40,7 @@
                     app:layout_marginTopPercent="18.3%w"
                     app:layout_textSizePercent="5%w" />
 
-                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                <com.sushant.timepicker.library.horizontalLoop.HorizontalLoopView
                     android:id="@+id/day"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -61,7 +61,7 @@
                     android:background="@color/white"/>
 
 
-                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                <com.sushant.timepicker.library.horizontalLoop.HorizontalLoopView
                     android:id="@+id/month"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -99,7 +99,7 @@
                     app:layout_textSizePercent="5%w" />
 
 
-                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                <com.sushant.timepicker.library.horizontalLoop.HorizontalLoopView
                     android:id="@+id/hours"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -118,7 +118,7 @@
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"/>
 
-                <com.sushant.timepicker.horizontalLoop.HorizontalLoopView
+                <com.sushant.timepicker.library.horizontalLoop.HorizontalLoopView
                     android:id="@+id/minutes"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -141,7 +141,7 @@
 
 
 
-                <com.sushant.timepicker.ScaleButton
+                <com.sushant.timepicker.library.ScaleButton
                     android:id="@+id/confirmButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -161,10 +161,10 @@
 
 
 
-            </com.sushant.timepicker.percentHelper.PercentRelativeLayout>
+            </com.sushant.timepicker.library.percentHelper.PercentRelativeLayout>
         </ScrollView>
 
 
 
     </RelativeLayout>
-</com.sushant.timepicker.percentHelper.PercentRelativeLayout>
+</com.sushant.timepicker.library.percentHelper.PercentRelativeLayout>

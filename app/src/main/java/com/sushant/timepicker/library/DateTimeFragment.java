@@ -1,4 +1,4 @@
-package com.sushant.timepicker;
+package com.sushant.timepicker.library;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
@@ -8,15 +8,17 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.sushant.timepicker.horizontalLoop.HorizontalLoopView;
-import com.sushant.timepicker.horizontalLoop.LoopViewAdapter;
-import com.sushant.timepicker.percentHelper.PercentRelativeLayout;
+import com.sushant.timepicker.R;
+import com.sushant.timepicker.library.horizontalLoop.HorizontalLoopView;
+import com.sushant.timepicker.library.horizontalLoop.LoopViewAdapter;
+import com.sushant.timepicker.library.percentHelper.PercentRelativeLayout;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -47,6 +49,20 @@ public class DateTimeFragment extends Fragment implements View.OnClickListener {
     //Customize params
     private TextView selectDateText, selectTimeText;
     private PercentRelativeLayout rootView;
+
+    private String defaultHeaderText;
+    private int defaultHeaderColor;
+    private int backgroundResource, backgroundColor;
+    private Drawable backgroundDrawable;
+
+    private String defaultTimeHeaderText;
+    private int defaultTimeHeaderColor;
+
+    private String confirmButtonText;
+    private int confirmButtonTextColor;
+    private Drawable confirmButtonDrawable;
+    private int confirmBackgroundResource, confirmBackgroundColor;
+    private int selectedColor, unSelectedColor;
 
 
     public static DateTimeFragment newInstance() {
@@ -115,6 +131,53 @@ public class DateTimeFragment extends Fragment implements View.OnClickListener {
         setUpDay(currentDay);
         setUpMinutes(currentMinutes);
         setUpHour(currentHour);
+
+        setUpDesign();
+    }
+
+    private void setUpDesign() {
+        defaultHeaderText = (defaultHeaderText != null && !TextUtils.isEmpty(defaultHeaderText)) ? defaultHeaderText : "SELECT DATE";
+        defaultHeaderColor = defaultHeaderColor != 0 ? defaultHeaderColor : getResources().getColor(R.color.white);
+
+        defaultTimeHeaderText = (defaultTimeHeaderText != null && !TextUtils.isEmpty(defaultTimeHeaderText)) ? defaultTimeHeaderText : "SELECT TIME";
+        defaultTimeHeaderColor = defaultTimeHeaderColor != 0 ? defaultTimeHeaderColor : getResources().getColor(R.color.white);
+
+        selectDateText.setText(defaultHeaderText);
+        selectDateText.setTextColor(defaultHeaderColor);
+
+        selectTimeText.setText(defaultTimeHeaderText);
+        selectTimeText.setTextColor(defaultTimeHeaderColor);
+
+        backgroundResource = backgroundResource != 0 ? backgroundResource : R.mipmap.background;
+        rootView.setBackgroundResource(backgroundResource);
+
+        if (backgroundColor != 0)
+            rootView.setBackgroundColor(backgroundColor);
+
+        if (backgroundDrawable != null)
+            rootView.setBackground(backgroundDrawable);
+
+        confirmButtonText = (confirmButtonText != null && !TextUtils.isEmpty(confirmButtonText) ? confirmButtonText : "Confirm");
+        confirmButton.setText(confirmButtonText);
+
+        confirmButtonTextColor = confirmButtonTextColor != 0 ? confirmButtonTextColor : getResources().getColor(R.color.white);
+
+        if (confirmBackgroundResource != 0)
+            confirmButton.setBackgroundResource(confirmBackgroundResource);
+
+        if (confirmBackgroundColor != 0)
+            confirmButton.setBackgroundColor(confirmBackgroundColor);
+
+        confirmButtonDrawable = confirmButtonDrawable != null ? confirmButtonDrawable : getResources().getDrawable(R.drawable.rounded_corners_button);
+
+        confirmButton.setBackgroundDrawable(confirmButtonDrawable);
+        confirmButton.setTextColor(confirmButtonTextColor);
+
+        selectedColor = selectedColor != 0 ? selectedColor : getResources().getColor(R.color.white);
+        unSelectedColor = unSelectedColor != 0 ? unSelectedColor :
+                getResources().getColor(R.color.unselected_color);
+
+
     }
 
     private void setUpMonth(String currentMonth) {
@@ -412,16 +475,28 @@ public class DateTimeFragment extends Fragment implements View.OnClickListener {
      **/
 
     public void setDateHeaderText(String text) {
-        selectDateText.setText(text);
+        this.defaultHeaderText = text;
     }
 
     public void setDateHeaderColor(@ColorInt int color) {
-        selectDateText.setTextColor(color);
+        this.defaultHeaderColor = color;
     }
 
-    public void setBackgroundColor(int color) {
-        rootView.setBackgroundColor(color);
+    /**
+     * Background
+     **/
 
+    public void setBackgroundResource(@DrawableRes int resource) {
+        this.backgroundResource = resource;
+
+    }
+
+    public void setBackgroundColor(@ColorInt int color) {
+        this.backgroundColor = color;
+    }
+
+    public void setBackground(Drawable backgroundDrawable) {
+        this.backgroundDrawable = backgroundDrawable;
     }
 
 
@@ -430,11 +505,11 @@ public class DateTimeFragment extends Fragment implements View.OnClickListener {
      **/
 
     public void setTimeHeaderText(String text) {
-        selectTimeText.setText(text);
+        this.defaultTimeHeaderText = text;
     }
 
     public void setTimeHeaderColor(@ColorInt int color) {
-        selectTimeText.setTextColor(color);
+        this.defaultTimeHeaderColor = color;
     }
 
 
@@ -442,16 +517,35 @@ public class DateTimeFragment extends Fragment implements View.OnClickListener {
 
 
     public void setConfirmText(String text) {
-        confirmButton.setText(text);
+        this.confirmButtonText = text;
     }
 
+
     public void setConfirmTextColor(@ColorInt int color) {
-        confirmButton.setTextColor(color);
+        this.confirmButtonTextColor = color;
     }
 
 
     public void setConfirmBackground(Drawable drawable) {
-        confirmButton.setBackground(drawable);
+        this.confirmButtonDrawable = drawable;
+    }
+
+    public void setConfirmBackgroundResource(@DrawableRes int resource) {
+        this.confirmBackgroundResource = resource;
+
+    }
+
+
+    public void setConfirmBackgroundColor(@ColorInt int confirmBackgroundColor) {
+        this.confirmBackgroundColor = confirmBackgroundColor;
+    }
+
+    public void setSelectedColor(@ColorInt int selectedColor) {
+        this.selectedColor = selectedColor;
+    }
+
+    public void setUnSelectedColor(@ColorInt int unSelectedColor) {
+        this.unSelectedColor = unSelectedColor;
     }
 
 

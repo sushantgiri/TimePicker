@@ -1,4 +1,4 @@
-package com.sushant.timepicker.horizontalLoop;
+package com.sushant.timepicker.library.horizontalLoop;
 
 import android.content.Context;
 import android.util.TypedValue;

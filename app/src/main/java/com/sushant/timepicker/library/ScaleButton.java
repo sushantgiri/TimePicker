@@ -1,4 +1,4 @@
-package com.sushant.timepicker;
+package com.sushant.timepicker.library;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -7,7 +7,7 @@ import android.support.v7.widget.AppCompatButton;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-
+import com.sushant.timepicker.R;
 
 
 public class ScaleButton extends AppCompatButton {
