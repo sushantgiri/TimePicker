@@ -3,12 +3,12 @@
 
 <img src="https://user-images.githubusercontent.com/22026902/55102879-7b723980-50ef-11e9-9aa9-41c169ce70e8.gif" width="200" height="360" />
 
-**Features:**
+##**Features:**
 - Set to default current time.
 - Set default value on start Up.
 - Completely customizable views.
 
-**Implementation:**
+##**Implementation:**
 
 
 1.Instantiate DateFragment Class as:
